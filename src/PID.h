@@ -17,6 +17,9 @@ public:
   double Ki;
   double Kd;
 
+  double accum_error;
+  double prev_error;
+
   /*
   * Constructor
   */
@@ -41,6 +44,11 @@ public:
   * Calculate the total PID error.
   */
   double TotalError();
+
+  /*
+  * Twiggy
+  */
+  void Twiddle();
 };
 
 #endif /* PID_H */
