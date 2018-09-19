@@ -44,11 +44,6 @@ public:
   * Calculate the total PID error.
   */
   double TotalError();
-
-  /*
-  * Twiggy
-  */
-  void Twiddle();
 };
 
 #endif /* PID_H */

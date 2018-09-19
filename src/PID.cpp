@@ -29,15 +29,10 @@ void PID::Init(double Kp_in, double Ki_in, double Kd_in) {
 
 void PID::UpdateError(double cte) {
     accum_error = accum_error + cte;
-    if(accum_error>10000){accum_error = 10000;}
-    if(accum_error<-10000){accum_error = -10000;}
     p_error = cte * Kp;
     i_error = accum_error * Ki;
     d_error = (cte-prev_error) * Kd;
     prev_error = cte;
-    
-    std::cout<<"cte: "<< cte<<std::endl;
-    std::cout<<"accum_error: "<< accum_error <<std::endl;
 }
 
 double PID::TotalError() {
@@ -45,16 +40,4 @@ double PID::TotalError() {
    double total_error = p_error + i_error + d_error;
    
    return -total_error;
-}
-
-void PID::Twiddle() {
-    double tol = 0.2;
-    
-    double sum_dp = Kp + Ki + Kd;
-
-    
-    int it = 0;
-    while(sum_dp > tol){
-        std::cout<<"Best Error"<<std::endl;
-    }
 }
