@@ -17,6 +17,9 @@ public:
   double Ki;
   double Kd;
 
+  double accum_error;
+  double prev_error;
+
   /*
   * Constructor
   */
